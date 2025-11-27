@@ -1,0 +1,171 @@
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 20px;
+    }
+    
+    .about-grid,
+    .promotion-grid {
+        gap: 40px;
+    }
+    
+    .support-cols {
+        gap: 30px;
+    }
+    
+    .support-col {
+        padding: 30px;
+    }
+}
+
+/* Мобильные устройства (768px и меньше) */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section_inner {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+    }
+    
+    /* Хедер */
+    .header .section_inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .hero {
+        padding: 120px 0 80px;
+        margin-top: 140px;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    /* О нас */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+    }
+    
+    /* Меры поддержки */
+    .support-cols {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .support-col {
+        padding: 25px;
+    }
+    
+    /* Акции */
+    .promotion-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .promotion-title {
+        font-size: 28px;
+    }
+    
+    /* Мероприятия */
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-card {
+        padding: 25px;
+    }
+    
+    /* Отзывы */
+    .reviews-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .review-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Футер */
+    .footer-nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer {
+        padding: 30px 0 40px;
+    }
+}
+
+/* Маленькие мобильные устройства (480px и меньше) */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    .support-col {
+        padding: 20px;
+    }
+    
+    .support-col-title {
+        font-size: 20px;
+    }
+    
+    .event-card {
+        padding: 20px;
+    }
+    
+    .review-item {
+        padding: 20px;
+    }
+}

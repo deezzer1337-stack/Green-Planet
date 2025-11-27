@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зеленая планета - Волонтерство и экология</title>
+    <style>
+        /* Базовые стили */
+        :root {
+            --primary-color: #4f1019;
+            --secondary-color: #9f887e;
+            --accent-color: #BFD8C2;
+            --background-light: #fcf9ed;
+            --background-gray: #f8f8f8;
+            --text-dark: #424242;
+            --text-light: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section_inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Хедер */
+        .header {
+            background-color: var(--accent-color);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header .section_inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+        
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Герой секция */
+        .hero {
+            background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* О нас */
+        .about {
+            background-color: var(--background-light);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .placeholder-image {
+            background: linear-gradient(45deg, #2E8B57, #3CB371);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .placeholder-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Меры поддержки */
+        .support {
+            background-color: var(--background-gray);
+        }
+        
+        .support-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .support-col {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s;
+        }
+        
+        .support-col:hover {
+            transform: translateY(-5px);
+        }
+        
+        .support-col-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .support-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .support-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .support-item:before {
+            content: "♻️";
+            position: absolute;
+            left: 0;
+        }
+        
+        .support-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            text-align: center;
+            background: var(--accent-color);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        /* Акции */
+        .promotion {
+            background-color: #fcf5ed;
+        }
+        
+        .promotion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .promotion-content {
+            padding: 20px;
+        }
+        
+        /* Мероприятия */
+        .events {
+            background-color: #f2f2f2;
+        }
+        
+        .event-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 5px solid #2E8B57;
+        }
+        
+        .event-date {
+            color: #2E8B57;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .event-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .event-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .event-organizer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .organizer-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Отзывы */
+        .reviews {
+            background-color: var(--background-gray);
+        }
+        
+        .reviews-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .review-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s;
+        }
+        
+        .review-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .review-author {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .review-author:before {
+            content: "👤";
+            font-size: 1.5rem;
+        }
+        
+        .review-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        /* Футер */
+        .footer {
+            background-color: var(--accent-color);
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .footer-nav-list a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-copyright {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Модальные окна */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: modalAppear 0.3s ease-out;
+        }
+
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* Формы */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: white;
+            cursor: pointer;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Контакты модалка */
+        .contacts-modal .modal-content {
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .phone-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 2rem 0;
+            text-decoration: none;
+            display: block;
+        }
+
+        .phone-number:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header .section_inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .hero {
+                margin-top: 120px;
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-grid,
+            .promotion-grid,
+            .support-cols {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .reviews-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .placeholder-image {
+                height: 300px;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 30px 20px;
+                width: 95%;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="section header">
+        <div class="section_inner">
+            <div class="logo">🌿 Зеленая Планета</div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#anchor1" class="nav-link">Меры поддержки</a></li>
+                    <li><a href="#anchor3" class="nav-link">О нас</a></li>
+                    <li><a href="#anchor4" class="nav-link">Отзывы</a></li>
+                    <li><a class="nav-link" onclick="openContacts()">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="section hero">
+        <div class="section_inner">
+            <div class="hero-content">
+                <h1 class="hero-title">Благотворительность - дело рук человека!</h1>
+                <p class="hero-subtitle">Рады встрече! Рады приветствовать вас на сайте команды "Зеленая планета"!</p>
+                <button class="btn" onclick="openVolunteerForm()">🌱 Вступить в волонтерские ряды!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="section about" id="anchor3">
+        <div class="section_inner">
+            <div class="about-content">
+                <h2 class="section-title">О нас</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p style="font-size: 1.1rem; line-height: 1.7;">Команда "Зеленая планета" - это группа энтузиастов, которые организуют акции по очистке парков, высадке деревьев и просветительской работе среди населения. Наша цель - привлечь как можно больше людей к заботе о природе и показать, что каждый может внести свой вклад в сохранение планеты. Благодаря усилиям команды, многие города становятся чище, а люди - более ответственными за окружающую среду.</p>
+                    </div>
+                    <div class="placeholder-image">
+                        <div class="placeholder-icon">🌍</div>
+                        <div class="placeholder-text">Волонтеры за чистую планету</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Командная работа по сохранению природы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Меры поддержки -->
+    <section class="section support" id="anchor1">
+        <div class="section_inner">
+            <h2 class="section-title">Меры поддержки</h2>
+            <p class="section-subtitle">Выберите то, что интересует именно вас</p>
+            
+            <div class="support-cols">
+                <div class="support-col">
+                    <h3 class="support-col-title">«PRO-отходы: От мусора до ресурсов»</h3>
+                    <ul class="support-list">
+                        <li class="support-item">Погружение в тему переработки</li>
+                        <li class="support-item">Куда сдаваются сложные отходы</li>
+                        <li class="support-item">Экскурсия на пункт приема вторсырья</li>
+                        <li class="support-item">Практические советы</li>
+                    </ul>
+                    <div class="support-price">Стоимость – <strong>от 500 руб.</strong></div>
+                </div>
+                
+                <div class="support-col">
+                    <h3 class="support-col-title">«Школа экологического волонтерства»</h3>
+                    <ul class="support-list">
+                        <li class="support-item">Основы экологического права</li>
+                        <li class="support-item">Разработка программ по организации благоустройства</li>
+                        <li class="support-item">Работа в команде</li>
+                        <li class="support-item">Работа с органами власти</li>
+                        <li class="support-item">Сбережение начиная с порога</li>
+                    </ul>
+                    <div class="support-price">Стоимость – <strong>от 2700 руб.</strong></div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="btn" onclick="openApplicationForm()">📝 Оставить заявку</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Акции -->
+    <section class="section promotion">
+        <div class="section_inner">
+            <div class="promotion-grid">
+                <div class="placeholder-image" style="background: linear-gradient(45deg, #FFD93D, #6BCF7F);">
+                    <div class="placeholder-icon">🎁</div>
+                    <div class="placeholder-text">Специальное предложение</div>
+                    <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Скидка 20% на курсы</div>
+                </div>
+                <div class="promotion-content">
+                    <h2 class="section-title" style="text-align: left;">Экологии - помощь, Вам - выгода!</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">При записи на волонтерскую помощь по сбору вторсырья и отходов - скидка 20% на любой выбранный Вами курс обучения! Не упустите свой шанс!</p>
+                    <button class="btn" onclick="openDiscountForm()">🎯 Получить скидку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Мероприятия -->
+    <section class="section events">
+        <div class="section_inner">
+            <h2 class="section-title">Наш актив</h2>
+            <p class="section-subtitle">Ближайшие мероприятия</p>
+            
+            <div class="event-card">
+                <div class="event-date">🗓️ 6 декабря, начало в 12:00 по мск</div>
+                <h3 class="event-title">Эко-Субботник в парке Горького</h3>
+                <p class="event-description">Присоединяйтесь к нам для уборки территории знаменитого парка! Мы не только соберем мусор, но и рассортируем его для дальнейшей переработки. Все участники получат эко-призы и горячий чай с печеньками!</p>
+                <div class="event-organizer">
+                    <div class="organizer-avatar">ОЖ</div>
+                    <div class="organizer-info">Куратор: Жукова Олеся</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="section reviews" id="anchor4">
+        <div class="section_inner">
+            <h2 class="section-title">Отзывы о нашей деятельности</h2>
+            
+            <div class="reviews-content">
+                <div class="placeholder-image" style="background: linear-gradient(45deg, #4ECDC4, #556270); height: 500px;">
+                    <div class="placeholder-icon">⭐</div>
+                    <div class="placeholder-text">Наши довольные волонтеры</div>
+                    <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Более 1000 участников</div>
+                </div>
+                
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <h4 class="review-author">Екатерина Анарова</h4>
+                        <p class="review-text">Спасибо большое, получила базовые знания! Очень полезный курс. Теперь понимаю, как правильно сортировать отходы и куда их сдавать.</p>
+                    </div>
+                    
+                    <div class="review-item">
+                        <h4 class="review-author">Светлана Родина</h4>
+                        <p class="review-text">Быстро и качественно! Обращались за помощью с уборкой территории, большие молодцы! Ребята приехали с инвентарем и все организовали.</p>
+                    </div>
+                    
+                    <div class="review-item">
+                        <h4 class="review-author">Владимир Братков</h4>
+                        <p class="review-text">Прошёл школу экологического волонтерства, теперь сотрудничаем с управлением города и регулярно устраиваем субботники во дворах. Спасибо!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="section footer">
+        <div class="section_inner">
+            <div class="footer-content">
+                <nav class="footer-nav">
+                    <ul class="footer-nav-list">
+                        <li><a href="#anchor1">Меры поддержки</a></li>
+                        <li><a href="#anchor3">О нас</a></li>
+                        <li><a href="#anchor4">Отзывы</a></li>
+                        <li><a onclick="openContacts()">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-copyright">
+                    © 2025 Зелёная планета. Все права защищены. 🌍
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для волонтерства -->
+    <div id="volunteerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('volunteerModal')">&times;</span>
+            <h2 class="modal-title">Стать волонтером</h2>
+            <form id="volunteerForm">
+                <div class="form-group">
+                    <label class="form-label">Ваше имя *</label>
+                    <input type="text" class="form-input" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Телефон *</label>
+                    <input type="tel" class="form-input" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Направление деятельности</label>
+                    <select class="form-select">
+                        <option value="">Выберите направление</option>
+                        <option value="cleaning">Уборка территорий</option>
+                        <option value="planting">Высадка деревьев</option>
+                        <option value="education">Просветительская работа</option>
+                        <option value="all">Готов помочь везде</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Опыт волонтерства</label>
+                    <select class="form-select">
+                        <option value="">Выберите опыт</option>
+                        <option value="none">Нет опыта</option>
+                        <option value="little">Маленький опыт</option>
+                        <option value="medium">Средний опыт</option>
+                        <option value="large">Большой опыт</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Стать волонтером 🌱</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для заявки -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('applicationModal')">&times;</span>
+            <h2 class="modal-title">Оставить заявку</h2>
+            <form id="applicationForm">
+                <div class="form-group">
+                    <label class="form-label">Ваше имя *</label>
+                    <input type="text" class="form-input" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Телефон *</label>
+                    <input type="tel" class="form-input" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Интересующий курс</label>
+                    <select class="form-select">
+                        <option value="">Выберите курс</option>
+                        <option value="pro-waste">PRO-отходы: От мусора до ресурсов</option>
+                        <option value="volunteer-school">Школа экологического волонтерства</option>
+                        <option value="both">Оба курса</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Дополнительная информация</label>
+                    <textarea class="form-textarea" placeholder="Ваши вопросы или пожелания..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить заявку 📝</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для скидки -->
+    <div id="discountModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('discountModal')">&times;</span>
+            <h2 class="modal-title">Получить скидку 20%</h2>
+            <form id="discountForm">
+                <div class="form-group">
+                    <label class="form-label">Ваше имя *</label>
+                    <input type="text" class="form-input" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Телефон *</label>
+                    <input type="tel" class="form-input" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email *</label>
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Выберите курс для скидки</label>
+                    <select class="form-select" required>
+                        <option value="">Выберите курс</option>
+                        <option value="pro-waste">PRO-отходы: От мусора до ресурсов</option>
+                        <option value="volunteer-school">Школа экологического волонтерства</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Участие в волонтерской акции</label>
+                    <select class="form-select" required>
+                        <option value="">Планируете участвовать?</option>
+                        <option value="yes">Да, обязательно</option>
+                        <option value="maybe">Возможно</option>
+                        <option value="no">Нет</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Получить скидку 🎯</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно контактов -->
+    <div id="contactsModal" class="modal contacts-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactsModal')">&times;</span>
+            <div class="contact-icon">📞</div>
+            <h2 class="modal-title">Свяжитесь с нами</h2>
+            <p class="contact-text">Мы всегда рады помочь и ответить на ваши вопросы</p>
+            <a href="tel:88000000008" class="phone-number">8 800 000-00-08</a>
+            <p style="color: #666; margin-bottom: 2rem;">Бесплатный звонок по России</p>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                <p style="margin: 0; color: #666; font-size: 0.9rem;">
+                    <strong>Время работы:</strong><br>
+                    Пн-Пт: 9:00-18:00<br>
+                    Сб-Вс: 10:00-16:00
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функции для открытия модальных окон
+        function openVolunteerForm() {
+            document.getElementById('volunteerModal').style.display = 'block';
+        }
+
+        function openApplicationForm() {
+            document.getElementById('applicationModal').style.display = 'block';
+        }
+
+        function openDiscountForm() {
+            document.getElementById('discountModal').style.display = 'block';
+        }
+
+        function openContacts() {
+            document.getElementById('contactsModal').style.display = 'block';
+        }
+
+        // Функция для закрытия модальных окон
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Обработка форм
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваша заявка на волонтерство отправлена. Мы свяжемся с вами в ближайшее время!');
+            closeModal('volunteerModal');
+            this.reset();
+        });
+
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваша заявка отправлена. Наш менеджер свяжется с вами для уточнения деталей!');
+            closeModal('applicationModal');
+            this.reset();
+        });
+
+        document.getElementById('discountForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Поздравляем! Скидка 20% активирована. Мы отправили промокод на вашу почту и свяжемся для подтверждения участия в волонтерской акции!');
+            closeModal('discountModal');
+            this.reset();
+        });
+
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Фиксация хедера при скролле
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(191, 216, 194, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--accent-color)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Анимация появления элементов
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за секциями
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Маска для телефона
+        document.querySelectorAll('input[type="tel"]').forEach(input => {
+            input.addEventListener('input', function(e) {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                e.target.value = '+7' + (x[2] ? ' (' + x[2] : '') + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+            });
+        });
+    </script>
+</body>
+</html>
